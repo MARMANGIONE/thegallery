@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Pictures</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<div th:if="${not #lists.isEmpty(pictures)}">
+		<h2>Pictures</h2>
+		<table class="table table-hover" id="myTable">
+		    <thead>
+			<tr>
+				<th onclick="sortTable(0)">Title</th>
+				<th onclick="sortTable(1)">Year</th>
+				<th onclick="sortTable(2)">Technique</th>
+				<th onclick="sortTable(3)">Dimension</th>
+				<th onclick="sortTable(4)">Author</th>
+				<span th:if="${mostraAzioni}"><th>Azioni</th></span>
+			</tr>
+			</thead>
+			<tr th:each="picture : ${pictures}">
+				<td th:text="${picture.title}"></td>
+				<td th:text="${picture.year}"></td>
+				<td th:text="${picture.technique}"></td>
+				<td th:text="${picture.height} x ${picture.length}"></td>
+				<td th:text="${picture.author.name}+' '+${opera.author.surname}"></td>
+				<span th:if="${mostraAzioni}"><td>
+					<form action="#" th:action="@{${postMode}}" method="post">
+						<input id="pictureId" name="pictureId" type="hidden" th:value="${picture.id}" />
+						<input id="authorId" name="authorId" type="hidden" th:value="${picture.author.id}" />
+						<button type="submit" th:onClick="${onClickSelect}">
+							<span th:text="${selectText}" />
+						</button>
+					</form>
+				</td></span>
+			</tr>
+		</table>
+	</div>
+	<form>
+		<input type="button" name="submit" value="Come back"
+			th:onclick="${backPage}" />
+	</form>
+
+
+</body>
+<body>
+	   <div>
+                <h1>Picture</h1>
+
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Year</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr th:each="picture : ${allPictures}">
+                        <td th:text="${picture.title}"></td>
+                        <td th:text="${picture.year}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            
+        </div>
+        
+        
+        <br />
+        <div>
+            <div>
+                <a href="/picture">Click here to add another picture</a>
+            </div>
+        </div>
+    
+</body>
+</html>

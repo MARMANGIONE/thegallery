@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+	<div>
+    	<p th:text="'Author: ' + ${author.name} + " " + ${author.surname}" />
+    </div>
+	<div>
+    	<p th:text="'Name: ' + ${author.name}" />
+    </div>
+	<div>
+    	<p th:text="'Surname: ' + ${author.surname}" />	
+    </div>
+    <div>
+    	<p th:text="'Nationality: ' + ${author.nationality}" />	
+    </div>
+    <div>
+    	<p th:text="'Birth Date: ' + ${author.birthDate}" />	
+    </div>
+    <div>
+    	<p th:text="' Date: ' + ${author.deathDate}" />	
+    </div>
+
+</body>
+</html>

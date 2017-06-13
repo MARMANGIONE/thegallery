@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+	<div>
+    	<p th:text="'Picture: ' + ${picture.title}" />
+    </div>
+	<div>
+    	<p th:text="'Year: ' + ${picture.year}" />
+    </div>
+	<div>
+    	<p th:text="'Technique: ' + ${picture.technique}" />	
+    </div>
+    <div>
+    	<p th:text="'Measures: ' + ${picture.height} x ${picture.length}" />	
+    </div>
+    <div>
+    	<p th:text="'Author: ' + ${picture.author}" />	
+    </div>
+
+</body>
+</html>
