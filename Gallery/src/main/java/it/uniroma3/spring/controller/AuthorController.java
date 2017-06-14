@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import it.uniroma3.spring.model.Author;
 import it.uniroma3.spring.service.AuthorService;
-import it.uniroma3.spring.service.PictureService;
 
 @Controller
 public class AuthorController {
