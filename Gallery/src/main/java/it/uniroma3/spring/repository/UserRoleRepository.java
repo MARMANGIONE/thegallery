@@ -11,6 +11,6 @@ import it.uniroma3.spring.model.UserRole;
 
 public interface UserRoleRepository extends CrudRepository<UserRole, Long> {
 	
-	List<UserRole> findByUtente(User user);
+	List<UserRole> findByUser(User user);
 	List<UserRole> findByUsername(String username);
 }

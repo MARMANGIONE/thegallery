@@ -26,7 +26,7 @@ public class UserRoleService {
 	}
 	
 	public List<UserRole> getUserRoleByUser(User user){
-		List<UserRole> roles = repository.findByUtente(user);
+		List<UserRole> roles = repository.findByUser(user);
 		return roles;
 	}
 	
