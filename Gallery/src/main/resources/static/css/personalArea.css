@@ -1,0 +1,32 @@
+body{
+	background-image: url("galleria.JPG");		
+}
+
+.thumbnail {
+	margin-top: 30px;
+    margin-bottom: 10px;
+    margin-right: 0px;
+    margin-left: 0px;  
+    background-color: #E8BF73; 
+    height: 220px;
+}
+
+.btn {	
+	background-color: #FFF6AE; 
+	margin-bottom: 10px;
+	margin-top: 20px;
+}
+
+.btn:hover{
+	background-color: #E87D20;
+}
+
+#logout {
+	margin-top: 60px;
+	font-size: 30px;
+	background-color: #FFF6AE; 
+}
+
+#logout:hover {
+	background-color: #E87D20;
+}
