@@ -30,7 +30,7 @@ public class AuthorListController {
 	    model.addAttribute("postMode","/deleteAuthor");
 	    model.addAttribute("selectText","Delete");
 	    model.addAttribute("onClickSelect","return confirm('All associated pictures will be deleted. Are you sure?')");
-	    model.addAttribute("backPage","location.href='allAuthor'");
+	    model.addAttribute("backPage","location.href='allAuthors'");
 	    return "allAuthors";
 	}
 	

@@ -1,5 +1,8 @@
 body{
-	background-image: url("galleria.JPG");		
+	background-image: url("galleria.JPG");
+	background-repeat:no-repeat;	
+	background-attachment: fixed;
+	background-size: cover;		
 }
 
 .thumbnail {
