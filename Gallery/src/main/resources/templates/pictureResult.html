@@ -1,6 +1,31 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>    
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+<link href="css/pictureResult.css" rel="stylesheet" media="screen"/>
 <body>
+
+<div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header"><a class="navbar-brand" href="#">The Gallery</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-menubuilder">
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="/">Home</a>
+                </li>
+                <li><a href="/allPictures">Pictures</a>
+                </li>
+                <li><a href="/allAuthors">Authors</a>
+                </li>
+                <li><a href="/personalArea">Personal Area</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
 	<div>
     	<p th:text="'Picture: ' + ${picture.title}" />
     </div>
@@ -11,7 +36,7 @@
     	<p th:text="'Technique: ' + ${picture.technique}" />	
     </div>
     <div>
-    	<p th:text="'Measures: ' + ${picture.height} x ${picture.length}" />	
+    	<p th:text="'Measures: ' + ${picture.height} + ' x ' + ${picture.length}" />	
     </div>
     <div>
     	<p th:text="'Author: ' + ${picture.author}" />	

@@ -5,34 +5,6 @@ body {
 	background-size: cover;
 }
 
-
-section {
-	margin-top: 100px;
-	text-align: center;
-	background-color: #88cad4;
-	border-style: solid;
-	border-color: white;
-	border-width: 0.5px;
-	padding-bottom: 20px; justify-content : center;	
-	margin: auto;
-	font-size: 1.5em;
-	justify-content: center;
-}
-
-.btn {	
-	background-color: #d7eb88; 
-	margin-bottom: 10px;
-	margin-top: 20px;
-}
-
-.btn:hover{
-	background-color: #8aebc9;
-}
-
-#scegli {
-	margin:auto;
-}
-
 #custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
     color: rgba(119, 119, 119, 1);
     background-color: rgba(0, 0, 0, 1);
@@ -64,3 +36,32 @@ section {
 #custom-bootstrap-menu.navbar-default .navbar-toggle:focus .icon-bar {
     background-color: #000000;
 }
+
+
+section {
+	margin-top: 100px;
+	text-align: center;
+	background-color: #88cad4;
+	border-style: solid;
+	border-color: white;
+	border-width: 0.5px;
+	padding-bottom: 20px; justify-content : center;	
+	margin: auto;
+	font-size: 1.5em;
+	justify-content: center;
+}
+
+.btn {	
+	background-color: #d7eb88; 
+	margin-bottom: 10px;
+	margin-top: 20px;
+}
+
+.btn:hover{
+	background-color: #8aebc9;
+}
+
+#scegli {
+	margin:auto;
+}
+

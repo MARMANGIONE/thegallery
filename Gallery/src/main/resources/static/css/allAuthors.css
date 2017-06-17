@@ -5,27 +5,6 @@ body{
 	background-size: cover;	
 }
 
-.table {
-	background-color: #88cad4;
-}
-
-input {
-	background-color:  #d7eb88;
-}
-
-input:hover {
-	background-color: #8aebc9;
-}
-
-
-button{
-	background-color:  #d7eb88;
-}
-
-button:hover {
-	background-color: #8aebc9;
-}
-
 #custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
     color: rgba(119, 119, 119, 1);
     background-color: rgba(0, 0, 0, 1);
@@ -57,3 +36,25 @@ button:hover {
 #custom-bootstrap-menu.navbar-default .navbar-toggle:focus .icon-bar {
     background-color: #000000;
 }
+
+.table {
+	background-color: #88cad4;
+}
+
+input {
+	background-color:  #d7eb88;
+}
+
+input:hover {
+	background-color: #8aebc9;
+}
+
+
+button{
+	background-color:  #d7eb88;
+}
+
+button:hover {
+	background-color: #8aebc9;
+}
+
