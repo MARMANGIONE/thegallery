@@ -6,24 +6,24 @@ body{
 }
 
 .table {
-	background-color: #E8BF73;
+	background-color: #88cad4;
 }
 
 input {
-	background-color: #FFF6AE;
+	background-color:  #d7eb88;
 }
 
 input:hover {
-	background-color: #E87D20;
+	background-color: #8aebc9;
 }
 
 
 button{
-	background-color: #FFF6AE
+	background-color:  #d7eb88;
 }
 
 button:hover {
-	background-color: #E87D20;
+	background-color: #8aebc9;
 }
 
 #custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
