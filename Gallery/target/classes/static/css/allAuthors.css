@@ -1,5 +1,8 @@
 body{
-	background-image: url("galleria.JPG");		
+	background-image: url("galleria.JPG");	
+	background-repeat:no-repeat;	
+	background-attachment: fixed;
+	background-size: cover;	
 }
 
 .table {
@@ -21,4 +24,36 @@ button{
 
 button:hover {
 	background-color: #E87D20;
+}
+
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
+    color: rgba(119, 119, 119, 1);
+    background-color: rgba(0, 0, 0, 1);
+    background: -webkit-linear-gradient(top, rgba(69, 54, 54, 1) 0%, rgba(0, 0, 0, 1) 100%);
+    background: linear-gradient(to bottom, rgba(69, 54, 54, 1) 0%, rgba(0, 0, 0, 1) 100%);
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:hover,
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:focus {
+    color: rgba(66, 153, 166, 1);
+    background-color: rgba(87, 42, 42, 1);
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a,
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:hover,
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:focus {
+    color: rgba(194, 123, 17, 0.57);
+    background-color: rgba(87, 84, 77, 1);
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle {
+    border-color: #57544d;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle:hover,
+#custom-bootstrap-menu.navbar-default .navbar-toggle:focus {
+    background-color: #57544d;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle .icon-bar {
+    background-color: #57544d;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle:hover .icon-bar,
+#custom-bootstrap-menu.navbar-default .navbar-toggle:focus .icon-bar {
+    background-color: #000000;
 }

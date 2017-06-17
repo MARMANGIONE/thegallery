@@ -3,6 +3,7 @@ package it.uniroma3.spring.service;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -43,4 +44,25 @@ public class UserService {
 		User user = userRepository.findByUsername(username);
 		return user;
 	}
+	
+	public User registerNewUser(User user) throws Exception {
+         
+        if (findUsername(user.getUsername())) {   
+            throw new Exception("Username gia' esistente");
+        }
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+		String password = passwordEncoder.encode(user.getPassword());
+		user.setPassword(password);
+        return userRepository.save(user);       
+    }
+    
+    
+    private boolean findUsername(String username) {
+        User user = userRepository.findByUsername(username);
+        if (user != null) {
+            return true;
+        }
+        return false;
+    }
+	
 }

@@ -8,17 +8,26 @@
   </head>
   <body>
   
-  <nav class="navbar navbar-inverse nav-justified" role="navigation">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-      <span class="sr-only">Espandi barra di navigazione</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="/">Home</a>   
-  </div>     
-</nav>
+  <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header"><a class="navbar-brand" href="#">The Gallery</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-menubuilder">
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="/">Home</a>
+                </li>
+                <li><a href="/Allpictures">Pictures</a>
+                </li>
+                <li><a href="/Allauthors">Authors</a>
+                </li>
+                <li><a href="/personalArea">Personal Area</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
 
 
 <div class="container">

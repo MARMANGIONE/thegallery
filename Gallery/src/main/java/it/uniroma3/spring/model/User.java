@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -33,17 +32,16 @@ public class User{
 	@Size(min = 1)
 	@NotNull
 	private String lastname;
-	@OneToMany(mappedBy = "user")
-	private List<UserRole> userRoles;
+	
 
 	
-	public User(String email, String password, String name, String lastname, boolean enabled, List<UserRole> userRoles){
+	public User(String email, String password, String name, String lastname, boolean enabled){
 		this.email = email;
 		this.password = password;
 		this.name = name;
 		this.lastname = lastname;
 		this.enabled = enabled;
-		this.userRoles = userRoles;
+	
 	}
 
 	public User(String username, String password, boolean enabled) {
@@ -105,14 +103,6 @@ public class User{
 		this.username = username;
 	}
 
-
-	public List<UserRole> getUserRoles() {
-		return userRoles;
-	}
-
-	public void setRuoliUtente(List<UserRole> userRoles) {
-		this.userRoles = userRoles;
-	}
 
 	public boolean isEnabled() {
 		return enabled;

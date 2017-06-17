@@ -17,8 +17,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import it.uniroma3.spring.model.User;
-import it.uniroma3.spring.model.UserRole;
-import it.uniroma3.spring.service.UserRoleService;
 import it.uniroma3.spring.service.UserService;
 
 @Controller
@@ -27,8 +25,6 @@ public class UserController {
 	@Autowired
 	UserService userService;
 	
-	@Autowired
-	UserRoleService userRoleService;
 	
 	@GetMapping(value = "/register")
 	public String register(User user, Model model){
@@ -56,8 +52,6 @@ public class UserController {
 			String password = passwordEncoder.encode(user.getPassword());
 			user.setPassword(password);
 			user.setEnabled(true);
-			UserRole ru = new UserRole("USER", user);
-			userRoleService.insertUserRole(ru);
 			model.addAttribute(user);
 			model.addAttribute("userInsert", true);
 			return "/index";

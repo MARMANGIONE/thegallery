@@ -1,18 +1,67 @@
-<!DOCTYPE html >
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>form</title>
-</head>
-	<body>
-		<h1>Insert your information</h1>
-		
-		<form action="#" th:action="@{/processaUsers}" th:object="${users}" method="post">
-			<p>Username: <input type="text" th:field="*{username}" /></p>
-        	<p>Password: <input type="text" th:field="*{password}" /></p>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:tiles="http://www.thymeleaf.org">
+  <head>
+    <title>Registration</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"/>    
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+<link href="css/insert.css" rel="stylesheet" media="screen"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+<body>
+
+<div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header"><a class="navbar-brand" href="#">The Gallery</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-menubuilder">
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="/">Home</a>
+                </li>
+                <li><a href="/Allpictures">Pictures</a>
+                </li>
+                <li><a href="/Allauthors">Authors</a>
+                </li>
+                <li><a href="/personalArea">Personal Area</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+ 
+		<form action="#" th:action = "@{/register}" th:object = "${user}" method = "POST">
+			<h3>Join Us!</h3>
 			
-			<input type="submit" name="submit" value="Send"></input>
-			 <input type="reset" value="Reset" ></input>
+			
+	
+			<div>Email: <input type = "text" th:field = "*{email}"/> 
+				<span th:if="${#fields.hasErrors('email')}" th:errors = "*{email}">Error</span>
+			</div>
+			
+			<div>Name: <input type = "text" th:field = "*{name}"/> 
+				<span th:if="${#fields.hasErrors('name')}" th:errors = "*{name}">Error</span>
+			</div>
+			
+			<div>Lastname: <input type = "text" th:field = "*{lastName}"/> 
+				<span th:if="${#fields.hasErrors('lastName')}" th:errors = "*{lastName}">Error</span>
+			</div>
+			
+			<div>Username : <input type = "text" th:field = "*{username}"/> 
+				<span th:if="${#fields.hasErrors('username')}" th:errors = "*{username}">Error</span>
+				<span th:if ="${usExist}" style= "color:red">This username already exist</span> 
+			</div>
+			
+			<div>Password: <input type = "password" id ="Password" th:field = "*{password}" th:value ="${confimation}"/> 
+				<span th:if="${#fields.hasErrors('password')}" th:errors = "*{password}">Error</span>
+			</div>
+			
+			<span><input type = "submit" value = "Join Us!" id = "submit" disabled = "disabled"/></span>
+			<button type ="submit" form ="home" style = "disply:inline; margin-left: 5px">Back</button>
 		</form>
-	</body>
+		
+		<form action = "index" method = "GET" id ="home">
+		</form>
+	</div>
+</body>
 </html>
