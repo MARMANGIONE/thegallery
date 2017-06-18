@@ -1,70 +1,72 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>    
-<link href="css/bootstrap.min.css" rel="stylesheet" media="screen"/>
-<link href="css/allPictures.css" rel="stylesheet" media="screen"/>
-<title>Pictures</title>
+<meta charset="ISO-8859-1" />
+<title>Picture List</title>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"  />
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/sort.js}"></script>
+<link rel="stylesheet" th:href="@{/css/allAuthors.css}"  />
+<script th:src="@{/css/allAuthors.css}"></script>
+ <link href="css/bootstrap.min.css" rel="stylesheet" media="screen"/> 
+  <link href="css/allAuthors.css" rel="stylesheet" media="screen"/> 
 </head>
 <body>
-
-<div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
-    <div class="container-fluid">
-        <div class="navbar-header"><a class="navbar-brand" href="#">The Gallery</a>
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-            </button>
-        </div>
-        <div class="collapse navbar-collapse navbar-menubuilder">
-            <ul class="nav navbar-nav navbar-left">
-                <li><a href="/">Home</a>
-                </li>
-                <li><a href="/showAllPictures">Pictures</a>
-                </li>
-                <li><a href="/showAuthorList">Authors</a>
-                </li>
-                <li><a href="/register">Join us!</a>
-                </li>
-                <li><a href="/personalArea">Personal Area</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
+<nav class="navbar navbar-inverse nav-justified" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Espandi barra di navigazione</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="index.html">Home</a>   
+  </div>     
+</nav>
 
 	<div th:if="${not #lists.isEmpty(pictures)}">
-		<h2>Pictures</h2>
 		<table class="table table-hover" id="myTable">
-		    <thead>
-			<tr>
-				<th onclick="sortTable(0)">Title</th>
-				<th onclick="sortTable(1)">Year</th>
-				<th onclick="sortTable(2)">Technique</th>
-				<th onclick="sortTable(3)">Dimension</th>
-				<th>Azioni</th>
-			</tr>
+			<thead>
+				<tr>
+					<th>Picture</th>
+					<th onclick="sortTable(1)">Title</th>
+					<th onclick="sortTable(2)">Year</th>
+					<th onclick="sortTable(3)">Technique</th>
+					<th onclick="sortTable(4)">Dimension</th>
+					<th onclick="sortTable(5)">Author</th>
+					<span th:if="${mostraAzioni}"><th>Azioni</th></span>
+				</tr>
 			</thead>
 			<tr th:each="picture : ${pictures}">
 				<td th:text="${picture.title}"></td>
 				<td th:text="${picture.year}"></td>
 				<td th:text="${picture.technique}"></td>
 				<td th:text="${picture.dimension}"></td>
-				<td>
-					<form action="#" th:action="@{${postMode}}" method="post">
-						<input id="pictureId" name="pictureId" type="hidden" th:value="${picture.id}" />
-						<button type="submit" th:onClick="${onClickSelect}">
-							<span th:text="${selectText}" />
-						</button>
-					</form>
-				</td>
+				<td th:text="${picture.author.name}+' '+${picture.author.surname}"></td>
+				<span th:if="${mostraAzioni}"><td>
+						<form action="#" th:action="@{${postMode}}" method="post">
+							<input id="idPicture" name="idPicture" type="hidden"
+								th:value="${picture.id}" /> <input id="idAuthor" name="idAuthor"
+								type="hidden" th:value="${picture.author.id}" />
+							<button type="submit" th:onClick="${onClickSelect}">
+								<span th:text="${selectText}" />
+							</button>
+						</form>
+				</td></span>
 			</tr>
 		</table>
 	</div>
 	<form>
-		<input type="button" name="submit" value="Come back"
+		<input type="button" name="submit" value="Come Back"
 			th:onclick="${backPage}" />
 	</form>
-
-
+	
+  <script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="//code.jquery.com/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  
 </body>
+</html>

@@ -18,7 +18,7 @@ public class AuthorListController {
 	public String showAllAuthors(Model model) {
 	    model.addAttribute("authors", authorService.findAll());
 	    model.addAttribute("postMode","/showPictureByAuthor");
-	    model.addAttribute("selectText","Picture List");
+	    model.addAttribute("selectText","Author List");
 	    model.addAttribute("onClickSelect","");
 	    model.addAttribute("backPage","location.href='/'");
 	    return "allAuthors";
