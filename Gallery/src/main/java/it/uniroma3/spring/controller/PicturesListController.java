@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import it.uniroma3.spring.model.Picture;
 import it.uniroma3.spring.service.AuthorService;
 import it.uniroma3.spring.service.PictureService;
 
@@ -25,7 +24,7 @@ public class PicturesListController {
 	    model.addAttribute("onClickSelect","");
 	    model.addAttribute("backPage","location.href='/'");
 	    model.addAttribute("mostraAzioni",true);
-	    return "allPictures";
+	    return "pictures";
 	}
 	
 	@PostMapping("/showPicturesByAuthor")
@@ -33,7 +32,7 @@ public class PicturesListController {
 	    model.addAttribute("pictures", pictureService.findByAuthor(authorService.findbyId(authorId)));
 	    model.addAttribute("mostraAzioni",false);
 	    model.addAttribute("backPage","history.go(-1);");
-	    return "allPictures";
+	    return "pictures";
 	}
 	
 	@GetMapping("/pictureManagement")
@@ -44,15 +43,13 @@ public class PicturesListController {
 	    model.addAttribute("onClickSelect","return confirm('Are you sure you want to remove it?')");
 	    model.addAttribute("backPage","location.href='/showAllPictures'");
 	    model.addAttribute("mostraAzioni",true);
-	    return "allPictures";
+	    return "pictures";
 	}
 	
 	@PostMapping("/deletePicture")
 	public String pictureRemove(@RequestParam("pictureId") long pictureId, Model model) {
-		Picture picture = pictureService.findbyId(pictureId);
-		picture.getAuthor().removePicture(picture);
-	    pictureService.remove(pictureId);
-	    return pictureManager(model);
+		pictureService.remove(pictureId);
+		return pictureManager(model);
 	}
 }
 

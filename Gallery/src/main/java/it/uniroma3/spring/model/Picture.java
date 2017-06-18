@@ -32,9 +32,8 @@ public class Picture {
 	private String technique; 
 	
 	@NotNull
-	private Integer lenght; 
-	@NotNull
-	private Integer height; 
+	private String dimension; 
+	
 	
 	@ManyToOne
 	@NotNull
@@ -42,12 +41,11 @@ public class Picture {
 	
 	public Picture(){ }
 	
-	public Picture(String title, Integer year, String technique, Integer lenght, Integer height, Author author){
+	public Picture(String title, Integer year, String technique, String dimension, Author author){
 		this.title = title; 
 		this.year = year; 
 		this.technique = technique; 
-		this.lenght = lenght; 
-		this.height = height; 
+		this.dimension = dimension; 
 		this.author = author; 
 	}
 
@@ -88,21 +86,15 @@ public class Picture {
 		this.author = author;
 	}
 
-	public Integer getLenght() {
-		return lenght;
+	public String getDimension() {
+		return dimension;
 	}
 
-	public void setLenght(Integer lenght) {
-		this.lenght = lenght;
+	public void setDimension(String dimension) {
+		this.dimension = dimension;
 	}
 
-	public Integer getHeight() {
-		return height;
-	}
-
-	public void setHeight(Integer height) {
-		this.height = height;
-	} 
+	
 	
 	
 	
