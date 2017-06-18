@@ -41,7 +41,7 @@ public class PicturesListController {
 	    model.addAttribute("postMode","/deletePicture");
 	    model.addAttribute("selectText","Delete");
 	    model.addAttribute("onClickSelect","return confirm('Are you sure you want to remove it?')");
-	    model.addAttribute("backPage","location.href='/showAllPictures'");
+	    model.addAttribute("backPage","location.href='/personalArea'");
 	    model.addAttribute("mostraAzioni",true);
 	    return "pictures";
 	}

@@ -30,7 +30,7 @@ public class AuthorListController {
 	    model.addAttribute("postMode","/deleteAuthor");
 	    model.addAttribute("selectText","Delete");
 	    model.addAttribute("onClickSelect","return confirm('All associated pictures will be deleted. Are you sure?')");
-	    model.addAttribute("backPage","location.href='AllAuthors'");
+	    model.addAttribute("backPage","location.href='personalArea.html'");
 	    return "allAuthors";
 	}
 	
@@ -40,8 +40,8 @@ public class AuthorListController {
 	    model.addAttribute("postMode","/chooseAuthor");
 	    model.addAttribute("selectText","Select");
 	    model.addAttribute("onClickSelect","");
-	    model.addAttribute("backPage","location.href='/showAuthorList'");
-	    return "AllAuthors";
+	    model.addAttribute("backPage","location.href='personalArea.html'");
+	    return "allAuthors";
 	}
 	
 	@PostMapping("/removeAuthor")
