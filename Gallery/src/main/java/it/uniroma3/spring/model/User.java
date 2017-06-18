@@ -22,9 +22,6 @@ public class User{
 	@Size(min = 1)
 	
 	
-
-
-
 	public User(String username, String password, boolean enabled) {
 		this.username = username;
 		this.password = password;
