@@ -21,7 +21,7 @@
             <ul class="nav navbar-nav navbar-left">
                 <li><a href="/">Home</a>
                 </li>
-                <li><a href="/showAllPictuers">Pictures</a>
+                <li><a href="/showAllPictures">Pictures</a>
                 </li>
                 <li><a href="/showAuthorList">Authors</a>
                 </li>
@@ -48,7 +48,7 @@
 				<td th:text="${picture.year}"></td>
 				<td th:text="${picture.technique}"></td>
 				<td th:text="${picture.height} x ${picture.length}"></td>
-				<td th:text="${picture.author.name}+' '+${opera.author.surname}"></td>
+				<td th:text="${picture.author.name}+' '+${picture.author.surname}"></td>
 				<span th:if="${mostraAzioni}"><td>
 					<form action="#" th:action="@{${postMode}}" method="post">
 						<input id="pictureId" name="pictureId" type="hidden" th:value="${picture.id}" />

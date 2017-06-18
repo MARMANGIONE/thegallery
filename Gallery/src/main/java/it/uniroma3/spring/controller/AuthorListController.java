@@ -15,7 +15,7 @@ public class AuthorListController {
 	private AuthorService authorService;
 	
 	@GetMapping("/showAuthorList")
-	public String visualizzaElenco(Model model) {
+	public String showAllAuthors(Model model) {
 	    model.addAttribute("authors", authorService.findAll());
 	    model.addAttribute("postMode","/showPictureByAuthor");
 	    model.addAttribute("selectText","Picture List");
@@ -35,17 +35,17 @@ public class AuthorListController {
 	}
 	
 	@GetMapping("/chooseAuthor")
-	public String scegliAutore(Model model) {
+	public String chooseAuthor(Model model) {
 	    model.addAttribute("authors", authorService.findAll());
 	    model.addAttribute("postMode","/chooseAuthor");
 	    model.addAttribute("selectText","Select");
 	    model.addAttribute("onClickSelect","");
-	    model.addAttribute("backPage","location.href='/Allauthors'");
+	    model.addAttribute("backPage","location.href='/showAuthorList'");
 	    return "AllAuthors";
 	}
 	
 	@PostMapping("/removeAuthor")
-	public String rimuoviAutore(@RequestParam("authorId") long authorId, Model model) {
+	public String authorRemove(@RequestParam("authorId") long authorId, Model model) {
 	    authorService.remove(authorId);
 	    return authorListManager(model);
 	}

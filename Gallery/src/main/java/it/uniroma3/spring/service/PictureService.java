@@ -23,8 +23,8 @@ public class PictureService {
         this.pictureRepository.save(picture);
     }
     
-    public void remove(final Long idOpera) {
-        this.pictureRepository.delete(idOpera);
+    public void remove(final Long pictureId) {
+        this.pictureRepository.delete(pictureId);
     }
 
 	public Picture findbyId(Long id) {

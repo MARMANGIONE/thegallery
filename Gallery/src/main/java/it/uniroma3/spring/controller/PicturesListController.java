@@ -21,7 +21,7 @@ public class PicturesListController {
 	public String showAll(Model model) {
 	    model.addAttribute("pictures", pictureService.findAll());
 	    model.addAttribute("postMode","/showPicturesByAuthor");
-	    model.addAttribute("selectText","Lista opere dell'autore");
+	    model.addAttribute("selectText","Picture List");
 	    model.addAttribute("onClickSelect","");
 	    model.addAttribute("backPage","location.href='/'");
 	    model.addAttribute("mostraAzioni",true);
@@ -39,16 +39,16 @@ public class PicturesListController {
 	@GetMapping("/pictureManagement")
 	public String pictureManager(Model model) {
 	    model.addAttribute("pictures", pictureService.findAll());
-	    model.addAttribute("postMode","/delectePicture");
+	    model.addAttribute("postMode","/deletePicture");
 	    model.addAttribute("selectText","Delete");
 	    model.addAttribute("onClickSelect","return confirm('Are you sure you want to remove it?')");
-	    model.addAttribute("backPage","location.href='/Allpictures'");
+	    model.addAttribute("backPage","location.href='/showAllPictures'");
 	    model.addAttribute("mostraAzioni",true);
 	    return "allPictures";
 	}
 	
 	@PostMapping("/deletePicture")
-	public String rimuoviOpera(@RequestParam("pictureId") long pictureId, Model model) {
+	public String pictureRemove(@RequestParam("pictureId") long pictureId, Model model) {
 		Picture picture = pictureService.findbyId(pictureId);
 		picture.getAuthor().removePicture(picture);
 	    pictureService.remove(pictureId);
