@@ -30,8 +30,11 @@
         </div>
     </div>
 </div>
-        <form action="#" th:action="@{/picture}" th:object="${picture}" method="post">
-            <div>
+<section>
+        <h1>New Opera</h1>
+		<form action="#" th:action="@{/picture}" th:object="${picture}"
+		method="post" enctype="multipart/form-data">
+		<div>
                 <div>
                     <span th:text="#{label.title}">Title: </span>
                     <span><input type="text" th:field="*{title}" /></span>
@@ -62,5 +65,6 @@
                 </div>
             </div>
         </form>
+        </section>
     </body>
 </html>

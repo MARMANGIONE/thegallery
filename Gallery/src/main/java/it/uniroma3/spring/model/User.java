@@ -1,21 +1,14 @@
 package it.uniroma3.spring.model;
 
-
-import java.util.List;
-
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-@Table(name = "\"User\"")
+@Table(name = "users")
 @Entity
 public class User{
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
 	@NotNull
 	@Size(min = 1)
 	private String username;
@@ -27,22 +20,10 @@ public class User{
 	@NotNull
 	private String email;
 	@Size(min = 1)
-	@NotNull
-	private String name;
-	@Size(min = 1)
-	@NotNull
-	private String lastname;
+	
 	
 
-	
-	public User(String email, String password, String name, String lastname, boolean enabled){
-		this.email = email;
-		this.password = password;
-		this.name = name;
-		this.lastname = lastname;
-		this.enabled = enabled;
-	
-	}
+
 
 	public User(String username, String password, boolean enabled) {
 		this.username = username;
@@ -54,13 +35,6 @@ public class User{
 		
 	}
 	
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	public String getEmail() {
 		return email;
@@ -78,21 +52,6 @@ public class User{
 		this.password = password;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getLastname() {
-		return lastname;
-	}
-
-	public void setCognome(String lastname) {
-		this.lastname = lastname;
-	}
 	
 	
 	public String getUsername() {

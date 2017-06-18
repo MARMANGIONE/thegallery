@@ -29,8 +29,10 @@
         </div>
     </div>
 </div>
-    
-        <form action="#" th:action="@{/author}" th:object="${author}" method="post">
+       <section>
+        <h1>New Author</h1>
+		<form action="#" th:action="@{/author}" th:object="${author}"
+		method="post" enctype="multipart/form-data">
             <div>
                 <div>
                     <span th:text="#{label.name}">Name: </span>
@@ -62,5 +64,6 @@
                 </div>
             </div>
         </form>
+        </section>
     </body>
 </html>
