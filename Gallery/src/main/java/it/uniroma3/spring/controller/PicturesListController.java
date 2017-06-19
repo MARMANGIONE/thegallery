@@ -40,20 +40,5 @@ public class PicturesListController {
 	    return "allPictures";
 	}
 	
-	@GetMapping("/gestisciElencoOpere")
-	public String pictureManagement(Model model) {
-	    model.addAttribute("opere", pictureservice.findAll());
-	    model.addAttribute("postMode","/deletePicture");
-	    model.addAttribute("selectText","Rimuovi");
-	    model.addAttribute("onClickSelect","return confirm('Confermare la rimozione?')");
-	    model.addAttribute("backPage","location.href='personalArea.html'");
-	    model.addAttribute("mostraAzioni",true);
-	    return "allPictures";
-	}
-	
-	@PostMapping("/deletePicture")
-	public String deletePicture(@RequestParam("idOpera") long idOpera, Model model) {
-	    pictureservice.remove(idOpera);
-	    return pictureManagement(model);
-	}
+
 }
