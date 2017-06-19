@@ -43,7 +43,7 @@ public class RegistrationController {
 	    }
 	   
 	    if (newUser == null) {
-	    	bindingResult.rejectValue("username", "Username.Existing");
+	    	bindingResult.rejectValue("username", "usExist");
 	    }
 		
 		if(bindingResult.hasErrors()){
@@ -56,7 +56,7 @@ public class RegistrationController {
 		}else {
 			model.addAttribute("user", newUser);
 			model.addAttribute("InsertionSuccesful", true);
-			return "/index";
+			return "/personalArea";
 	    }
 
 	}

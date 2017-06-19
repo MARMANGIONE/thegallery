@@ -50,20 +50,13 @@
                     <span><input type="text" th:field="*{technique}" /></span>
                     <span th:if="${#fields.hasErrors('technique')}" th:text="#{label.mandatory}">Error</span>
                 </div>
-                <div>
-                    <span th:text="#{label.length}">Length: </span>
-                    <span><input type="text" th:field="*{length}" /></span>
-                    <span th:if="${#fields.hasErrors('length')}" th:text="#{label.mandatory}">Error</span>
-                </div>
-                <div>
-                    <span th:text="#{label.height}">Height: </span>
-                    <span><input type="text" th:field="*{height}" /></span>
-                    <span th:if="${#fields.hasErrors('height')}" th:text="#{label.mandatory}">Error</span>
+                    <span th:text="#{label.dimension}">Dimension: </span>
+                    <span><input type="text" th:field="*{dimension}" /></span>
+                    <span th:if="${#fields.hasErrors('dimension')}" th:text="#{label.mandatory}">Error</span>
                 </div>
                 <div>
                     <span><button type="submit">Submit</button></span>
                 </div>
-            </div>
         </form>
         </section>
     </body>

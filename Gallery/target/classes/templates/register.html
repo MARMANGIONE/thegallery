@@ -35,31 +35,28 @@
     <div class="row">
         <div class="col-md-offset-5 col-md-3">  
         <div class="thumbnail">    
-		<form action="#" th:action = "@{/register}" th:object = "${user}" method = "POST">
-			<h3>Join Us!</h3>
-			
-			<div>Email: <input type = "text" th:field = "*{email}"/> 
-				<span th:if="${#fields.hasErrors('email')}" th:errors = "*{email}">Error</span>
-			</div>
-			
+	<form action="#" th:action = "@{/register}" th:object = "${user}" method = "POST">
 			<div>Username : <input type = "text" th:field = "*{username}"/> 
 				<span th:if="${#fields.hasErrors('username')}" th:errors = "*{username}">Error</span>
 				<span th:if ="${usExist}" style= "color:red">This username already exist</span> 
 			</div>
 			
-			<div>Password: <input type = "password" id ="Password" th:field = "*{password}" th:value ="${confimation}"/> 
+			<div style = "margin-top:10px">Password: <input type = "password" id ="Password" th:field = "*{password}" th:value ="${confermaPassword}"/> 
 				<span th:if="${#fields.hasErrors('password')}" th:errors = "*{password}">Error</span>
 			</div>
 			
-			<span><input type = "submit" value = "Join Us!" id = "submit" disabled = "disabled"/></span>
-			<button type ="submit" form ="home" style = "disply:inline; margin-left: 5px">Back</button>
-		</form>
-		
-		<form action = "index" method = "GET" id ="home">
-		</form>
-	 </div>
+			<div style = "margin-top:10px">Email: <input type = "text" th:field = "*{email}"/> 
+				<span th:if="${#fields.hasErrors('email')}" th:errors = "*{email}">Error</span>
+			</div>
+			
+			<div>
+			<input type="submit" value="Register" id="submit"/>
+			</div>	
+	 </form>
             </div>        
         </div>
-    </div>
+        </div>
+        </div>
+
 </body>
 </html>

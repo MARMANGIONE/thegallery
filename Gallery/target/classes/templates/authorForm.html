@@ -52,7 +52,7 @@
                 <div>
                     <span th:text="#{label.birthDate}">BirthDate: </span>
                     <span><input type="text" th:field="*{birthDate}" /></span>
-                    <span th:if="${#fields.hasErrors('length')}" th:text="#{label.mandatory}">Error</span>
+                    <span th:if="${#fields.hasErrors('birthDate')}" th:text="#{label.mandatory}">Error</span>
                 </div>
                 <div>
                     <span th:text="#{label.deathDate}">DeathDate: </span>
