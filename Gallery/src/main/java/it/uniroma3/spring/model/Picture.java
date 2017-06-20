@@ -36,7 +36,6 @@ public class Picture {
 	
 	
 	@ManyToOne
-	@NotNull
 	private Author author;
 	
 	public Picture(){ }

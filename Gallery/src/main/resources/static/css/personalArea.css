@@ -11,26 +11,17 @@ body{
     margin-bottom: 10px;
     margin-right: 0px;
     margin-left: 0px;  
-    background-color: #E8BF73; 
+    background-color: #88cad4; 
     height: 220px;
 }
 
 .btn {	
-	background-color: #FFF6AE; 
+	background-color: #d7eb88; 
 	margin-bottom: 10px;
 	margin-top: 20px;
 }
 
 .btn:hover{
-	background-color: #E87D20;
+	background-color:  #8aebc9;
 }
 
-#logout {
-	margin-top: 60px;
-	font-size: 30px;
-	background-color: #FFF6AE; 
-}
-
-#logout:hover {
-	background-color: #E87D20;
-}

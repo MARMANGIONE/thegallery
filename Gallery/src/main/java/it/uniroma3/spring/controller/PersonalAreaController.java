@@ -26,6 +26,7 @@ import it.uniroma3.spring.service.PictureService;
 	    return "personalArea";
 	  }
 
+	  
 	  @GetMapping("/pictureManagement")
 		public String pictureManagement(Model model) {
 		    model.addAttribute("opere", pictureservice.findAll());

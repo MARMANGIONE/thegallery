@@ -25,9 +25,12 @@
   </div>
 </nav>
     
-<section>
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-5 col-md-3">  
+        <div class="thumbnail">   
         <h1>New Opera</h1>
-		<form action="#" th:action="@{./picture}" th:object="${picture}"
+		<form  th:action="@{/picture}" th:object="${picture}"
 		method="post" enctype="multipart/form-data">
 		<div>
                 <div>
@@ -53,6 +56,9 @@
                     <span><button type="submit">Submit</button></span>
                 </div>
         </form>
-        </section>
+        </div>
+            </div>        
+        </div>
+    </div>
     </body>
 </html>
