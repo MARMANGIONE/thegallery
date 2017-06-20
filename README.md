@@ -7,3 +7,6 @@ i relativi casi d'uso.
 Si segnalano i seguenti errori non risolti:
 - non è possibile inserire nel dabatase un nuovo quadro in quanto non viene inizializzata l'author_id 
 
+Per il login:
+Username: martina
+password: 123456
