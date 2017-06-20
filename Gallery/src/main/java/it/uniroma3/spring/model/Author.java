@@ -4,12 +4,16 @@ package it.uniroma3.spring.model;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -18,34 +22,30 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Entity
 @NamedQuery(name="findAllAuthors", query="SELECT a FROM Author a")
 public class Author {
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id; 
-	
+	private Long id;
+	@Column(nullable = false)
 	@NotNull
-	@Size(min=1)
-	private String name; 
-	
+	@Size(min = 1)
+	private String name;
+	@Column(nullable = false)
 	@NotNull
-	@Size(min=1)
-	private String surname; 
-	
+	@Size(min = 1)
+	private String surname;
+	@Column(nullable = false)
 	@NotNull
-	@Size(min=1)
+	@Size(min = 1)
 	private String nationality;
-	
+	@Column(nullable = false)
 	@NotNull
-	@DateTimeFormat(pattern="dd/mm/yyyy")
-	private Date birthDate; 
-	
-	@NotNull
-	@DateTimeFormat(pattern="dd/mm/yyyy")
-	private Date deathDate; 
-	
-	@OneToMany
-	@NotNull
-	private List<Picture> pictures; 
+	@Temporal(TemporalType.DATE)
+	private Date birthDate;
+	@Temporal(TemporalType.DATE)
+	private Date deathDate;
+	@OneToMany(mappedBy = "author", cascade = {CascadeType.REMOVE})
+	private List<Picture> pictures;
+
 	
 	public Author(){ }
 	

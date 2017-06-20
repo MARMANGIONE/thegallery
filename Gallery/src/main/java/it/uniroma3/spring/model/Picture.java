@@ -1,5 +1,6 @@
 package it.uniroma3.spring.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,26 +18,26 @@ public class Picture {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id; 
-	
+	private Long id;
+	@Column(nullable = false)
 	@NotNull
-	@Size(min=1)
+	@Size(min = 1)
 	private String title;
-	
+	@Column(nullable = false)
 	@NotNull
-	@DateTimeFormat(pattern="yyyy")
-	private Integer year; 
-	
+	private Integer year;
+	@Column(nullable = false)
 	@NotNull
-	@Size(min=1)
-	private String technique; 
-	
+	@Size(min = 1)
+	private String technique;
+	@Column(nullable = false)
 	@NotNull
-	private String dimension; 
-	
-	
+	@Size(min = 1)
+	private String dimension;
+   
 	@ManyToOne
 	private Author author;
+	
 	
 	public Picture(){ }
 	
