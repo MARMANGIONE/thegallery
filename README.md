@@ -5,6 +5,5 @@ All'interno del progetto la relativa documentazione pdf con i diagrammi delle cl
 i relativi casi d'uso. 
 
 Si segnalano i seguenti errori non risolti:
-- non è possibile accedere nella personalArea al management dei quadri e degli autori
-- non vengono memorizzati nel database i nuovi autori e i nuovi quadri
+- non è possibile inserire nel dabatase un nuovo quadro in quanto non viene inizializzata l'author_id 
 
