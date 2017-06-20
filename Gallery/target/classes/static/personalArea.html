@@ -20,7 +20,7 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="/personalArea"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li><a href="/personalArea.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
   </div>
 </nav>
@@ -32,26 +32,15 @@
     <div class="thumbnail">
       
        <div class="caption">
-  <h1>Authors Management</h1>
+  <h1>Management</h1>
   
  <div class="btn-group btn-group-lg">
+    <input id="opere-btn" class="btn btn-default " type = "button" name = "submit"
+	 value = "Add new picture" onclick="location.href='chooseAuthor'" />	
 	<input id="artisti-btn" class="btn btn-default " type = "button" name = "submit" 
 	value = "Add new author" onclick="location.href='author'" />
-	
 	<input id="opere-btn" class="btn btn-default " type = "button" name = "submit" 
 	value = "Authors Management" onclick="location.href='authorListManagement'" />
-  </div>
-  
-  </div>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <div class="thumbnail">
-       <div class="caption">
-  <h1>Pictures Management</h1>  
- <div class="btn-group btn-group-lg"> 
-	<input id="opere-btn" class="btn btn-default " type = "button" name = "submit"
-	 value = "Add new picture" onclick="location.href='picture'" />	 
 	<input id="opere-btn" class="btn btn-default " type = "button" name = "submit" 
 	value = "Picture management" onclick="location.href='pictureManagement'" />
   </div>  
@@ -60,7 +49,6 @@
   </div>
   </div>
   </div>
-  
 
 	
   <script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>

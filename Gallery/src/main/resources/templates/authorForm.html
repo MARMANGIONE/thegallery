@@ -28,40 +28,43 @@
     <div class="row">
         <div class="col-md-offset-5 col-md-3">  
         <div class="thumbnail">   
-        <h1>New Author</h1>
-		<form action="#" th:action="@{./author}" th:object="${author}"
-		method="post" enctype="multipart/form-data">
-            <div>
-                <div>
-                    <span th:text="#{label.name}">Name: </span>
-                    <span><input type="text" th:field="*{name}" /></span>
-                    <span th:if="${#fields.hasErrors('name')}" th:text="#{label.mandatory}">Error</span>
-                </div>
-                <div>
-                    <span th:text="#{label.surname}">Surname: </span>
-                    <span><input type="text" th:field="*{surname}" /></span>
-                    <span th:if="${#fields.hasErrors('surname')}" th:text="#{label.mandatory}">Error</span>
-                </div>
-                <div>
-                    <span th:text="#{label.nationality}">Nationality: </span>
-                    <span><input type="text" th:field="*{nationality}" /></span>
-                    <span th:if="${#fields.hasErrors('nationality')}" th:text="#{label.mandatory}">Error</span>
-                </div>
-                <div>
-                    <span th:text="#{label.birthDate}">BirthDate: </span>
-                    <span><input type="text" th:field="*{birthDate}" /></span>
-                    <span th:if="${#fields.hasErrors('birthDate')}" th:text="#{label.mandatory}">Error</span>
-                </div>
-                <div>
-                    <span th:text="#{label.deathDate}">DeathDate: </span>
-                    <span><input type="text" th:field="*{deathDate}" /></span>
-                    <span th:if="${#fields.hasErrors('deathDate')}" th:text="#{label.mandatory}">Error</span>
-                </div>
-                <div>
-                    <span><button type="submit">Submit</button></span>
-                </div>
-            </div>
-        </form>
+        <form action="#" th:action="@{/author}" th:object="${author}"
+		method="post">
+		<div>
+			<input type="hidden" th:field="*{id}" />
+			<div>
+				<span>Name: </span> <span><input type="text"
+					th:field="*{name}" /></span> <span th:if="${#fields.hasErrors('name')}">Required field</span>
+			</div>
+			<div>
+				<span>Surname: </span> <span><input type="text"
+					th:field="*{surname}" /></span> <span
+					th:if="${#fields.hasErrors('surname')}">Required field</span>
+			</div>
+			<div>
+				<span>Nationality: </span> <span><input type="text"
+					th:field="*{nationality}" /></span> <span
+					th:if="${#fields.hasErrors('nationality')}">Required field</span>
+			</div>
+			<div>
+				<span>Birth Date: </span> <span><input type="date"
+					placeholder="GG-MM-AAAA" th:field="*{birthDate}" /></span> <span
+					th:if="${#fields.hasErrors('birthDate')}">format error</span>
+			</div>
+			<div>
+				<span>Death Date: </span> <span><input
+					type="date" placeholder="GG-MM-AAAA" th:field="*{deathDate}" /></span> <span
+					th:if="${#fields.hasErrors('deathDate')}">format error</span>
+			</div>
+		</div>
+		
+	<div class="btn-group btn-group-lg">
+	<input  class="btn btn-default" type = "submit" name = "submit" 
+	value = "Insert"  /> 
+	<input class="btn btn-default" type="button" name="submit" value="Come back"
+				onclick="location.href='personalArea.html'" />		
+  </div>		
+	</form>
         </div>
             </div>        
         </div>

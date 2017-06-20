@@ -34,11 +34,26 @@ public class PicturesListController {
 	
 	@PostMapping("/showPictureByAuthor")
 	public String visualizzaElencoOpereAutore(@RequestParam("idAuthor") long idAuthor, Model model) {
-	    model.addAttribute("opere", pictureservice.findByAuthor(authorService.findbyId(idAuthor)));
+	    model.addAttribute("pictures", pictureservice.findByAuthor(authorService.findbyId(idAuthor)));
 	    model.addAttribute("mostraAzioni",false);
 	    model.addAttribute("backPage","history.go(-1);");
 	    return "allPictures";
 	}
 	
+	@PostMapping("/deletePicture")
+	public String deletePicture(@RequestParam("idPicture") long idPicture, Model model) {
+	    pictureservice.remove(idPicture);
+	    return pictureManagement(model);
+	}
+	  @GetMapping("/pictureManagement")
+			public String pictureManagement(Model model) {
+			    model.addAttribute("opere", pictureservice.findAll());
+			    model.addAttribute("postMode","/deletePicture");
+			    model.addAttribute("selectText","Rimuovi");
+			    model.addAttribute("onClickSelect","return confirm('Confermare la rimozione?')");
+			    model.addAttribute("backPage","location.href='personalArea.html'");
+			    model.addAttribute("mostraAzioni",true);
+			    return "allPictures";
+			}
 
 }

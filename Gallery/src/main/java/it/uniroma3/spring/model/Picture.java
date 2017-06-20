@@ -10,7 +10,6 @@ import javax.persistence.NamedQuery;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @NamedQuery(name = "findAll", query = "SELECT p FROM Picture p")
