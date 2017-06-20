@@ -28,7 +28,6 @@
 
 
 	<div th:if="${not #lists.isEmpty(authors)}">
-		<h2>Authors</h2>
 		<table class="table table-hover" id="myTable">
 		    <thead>
 			<tr>
@@ -48,7 +47,7 @@
 				<td th:text="${author.deathDate}"></td>
 				<td>
 					<form action="#" th:action="@{${postMode}}" method="post">
-						<input id="authorId" name="authorId" type="hidden" th:value="${author.id}" />
+						<input id="idAuthor" name="idAuthor" type="hidden" th:value="${author.id}" />
 						<button type="submit" th:onClick="${onClickSelect}">
 							<span th:text="${selectText}" />
 						</button>

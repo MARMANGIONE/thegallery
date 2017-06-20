@@ -7,13 +7,13 @@ body{
 
 
 .thumbnail {
-	margin-top: 300px;
+	margin-top: 80px;
     margin-bottom: 10px;
     margin-right: 0px;
-    margin-left: 0px;  
+    margin-left: 250px;  
     background-color: #88cad4; 
-    height: 250px;
-    width:800px;
+    height: 200px;
+    width:770px;
     
 }
 
@@ -21,6 +21,7 @@ body{
 	background-color: #d7eb88; 
 	margin-bottom: 10px;
 	margin-top: 20px;
+	box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
 
 .btn:hover{

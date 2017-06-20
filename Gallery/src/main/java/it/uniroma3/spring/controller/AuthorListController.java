@@ -35,8 +35,8 @@ public class AuthorListController {
 	}
 	
 	@PostMapping("/removeAuthor")
-	public String authorRemove(@RequestParam("authorId") long authorId, Model model) {
-	    authorService.remove(authorId);
+	public String authorRemove(@RequestParam("idAuthor") long idAuthor, Model model) {
+	    authorService.remove(idAuthor);
 	    return authorListManager(model);
 	}
 	
